@@ -71,24 +71,66 @@
 
 //-------------------------------------------------------
 //Binary Search//
-function binarySearch(arr,item){
-    let start = 0;
-    let end = arr.length-1;
+// function binarySearch(arr,item){
+//     let start = 0;
+//     let end = arr.length-1;
     
-    while(start <= end){
-        let mid = Math.floor((start + end) / 2);
+//     while(start <= end){
+//         let mid = Math.floor((start + end) / 2);
      
-        if(arr[mid] == item)
-            return mid;
+//         if(arr[mid] == item)
+//             return mid;
         
-        if(item < arr[mid])
-            end = mid - 1;
-        else
-            start = mid + 1;
+//         if(item < arr[mid])
+//             end = mid - 1;
+//         else
+//             start = mid + 1;
+//     }
+//     return -1
+// }
+
+// let arr = [1,2,3,4,5,6,7,8,9,10];
+// let item = 9;
+// console.log(binarySearch(arr,item));  
+
+//--------------------------------------------------------
+//Merge two arrays//
+let arr1 = [1,5,9,27,56,100,100,100,200,300,400,500,600];
+let arr2 = [2,7,10,19,100,100,100,159,221,421];
+let arr3 = [];
+let a1 = 0;
+let a2 = 0;
+let a3 = 0;
+let biggerArray;
+if(arr1.length > arr2.length)
+    biggerArray = 1;
+else 
+    biggerArray = 2;
+
+while(a1 < arr1.length && a2 < arr2.length){
+    if(arr1[a1] < arr2[a2]){
+        arr3[a3] = arr1[a1];
+        a1++;
+    }else{
+        arr3[a3] = arr2[a2];
+        a2++;
     }
-    return -1
+    a3++;
 }
 
-let arr = [1,2,3,4,5,6,7,8,9];
-let item = 9;
-console.log(binarySearch(arr,item));  
+if(biggerArray == 1){
+    while(a1 < arr1.length){
+        arr3[a3] = arr1[a1];
+        a1++;
+        a3++;
+    }
+}else{
+    while(a2 < arr2.length){
+        arr3[a3] = arr2[a2];
+        a2++;
+        a3++;
+    }
+}
+
+console.log(arr3);
+
