@@ -52,19 +52,43 @@
 
 //-------------------------------------------------------
 //Linear Search//Multiple Occurances//
-function lenearSearch(arr,e){
-    let positions = [];
-    for(let i=0; i<arr.length; i++){
-        if(arr[i] == e){
-            positions.push(i);
-        }
+// function lenearSearch(arr,e){
+//     let positions = [];
+//     for(let i=0; i<arr.length; i++){
+//         if(arr[i] == e){
+//             positions.push(i);
+//         }
+//     }
+//     if(positions.length == 0){
+//         return -1;
+//     }
+//     return positions;
+// }
+
+// let arr = [1,2,3,4,5,3,6,7,8,3,9];
+// let e = 3;
+// console.log(lenearSearch(arr,e));
+
+//-------------------------------------------------------
+//Binary Search//
+function binarySearch(arr,item){
+    let start = 0;
+    let end = arr.length-1;
+    
+    while(start <= end){
+        let mid = Math.floor((start + end) / 2);
+     
+        if(arr[mid] == item)
+            return mid;
+        
+        if(item < arr[mid])
+            end = mid - 1;
+        else
+            start = mid + 1;
     }
-    if(positions.length == 0){
-        return -1;
-    }
-    return positions;
+    return -1
 }
 
-let arr = [1,2,3,4,5,3,6,7,8,3,9];
-let e = 3;
-console.log(lenearSearch(arr,e));
+let arr = [1,2,3,4,5,6,7,8,9];
+let item = 9;
+console.log(binarySearch(arr,item));  
