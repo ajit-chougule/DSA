@@ -95,42 +95,55 @@
 
 //--------------------------------------------------------
 //Merge two arrays//
-let arr1 = [1,5,9,27,56,100,100,100,200,300,400,500,600];
-let arr2 = [2,7,10,19,100,100,100,159,221,421];
-let arr3 = [];
-let a1 = 0;
-let a2 = 0;
-let a3 = 0;
-let biggerArray;
-if(arr1.length > arr2.length)
-    biggerArray = 1;
-else 
-    biggerArray = 2;
+// let arr1 = [1,5,9,27,56,100,100,100,200,300,400,500,600];
+// let arr2 = [2,7,10,19,100,100,100,159,221,421];
+// let arr3 = [];
 
-while(a1 < arr1.length && a2 < arr2.length){
-    if(arr1[a1] < arr2[a2]){
-        arr3[a3] = arr1[a1];
-        a1++;
-    }else{
-        arr3[a3] = arr2[a2];
-        a2++;
-    }
-    a3++;
-}
+// for(let i=0; i<arr1.length; i++){
+//     arr3[i] = arr1[i];
+// }
+// for(let i=0; i<arr2.length; i++){
+//     arr3[arr1.length + i] = arr2[i];
+// }
+// console.log(arr3);
 
-if(biggerArray == 1){
-    while(a1 < arr1.length){
-        arr3[a3] = arr1[a1];
-        a1++;
-        a3++;
-    }
-}else{
-    while(a2 < arr2.length){
-        arr3[a3] = arr2[a2];
-        a2++;
-        a3++;
-    }
-}
+//--------------------------------------------------------
+//Merge two arrays//Sorted//
+// let arr1 = [1,5,9,27,56,100,100,100,200,300,400,500,600];
+// let arr2 = [2,7,10,19,100,100,100,159,221,421];
+// let arr3 = [];
+// let a1 = 0;
+// let a2 = 0;
+// let a3 = 0;
+// let biggerArray;
+// if(arr1.length > arr2.length)
+//     biggerArray = 1;
+// else 
+//     biggerArray = 2;
 
-console.log(arr3);
+// while(a1 < arr1.length && a2 < arr2.length){
+//     if(arr1[a1] < arr2[a2]){
+//         arr3[a3] = arr1[a1];
+//         a1++;
+//     }else{
+//         arr3[a3] = arr2[a2];
+//         a2++;
+//     }
+//     a3++;
+// }
 
+// if(biggerArray == 1){
+//     while(a1 < arr1.length){
+//         arr3[a3] = arr1[a1];
+//         a1++;
+//         a3++;
+//     }
+// }else{
+//     while(a2 < arr2.length){
+//         arr3[a3] = arr2[a2];
+//         a2++;
+//         a3++;
+//     }
+// }
+
+// console.log(arr3);
